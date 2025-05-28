@@ -34,18 +34,27 @@ use Illuminate\Support\Facades\Storage;
         <style>
             .dropdown-content {
                 display: none;
-                position: absolute;
-                right: 0;
-                margin-top: 0.5rem;
+                position: fixed;
                 background-color: white;
                 border-radius: 0.375rem;
                 box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
                 border: 1px solid rgba(251, 191, 36, 0.2);
-                z-index: 50;
+                z-index: 9999;
             }
 
             .dropdown-content.show {
                 display: block;
+            }
+
+            /* Garante que o container dos dropdowns tenha um z-index menor que o dropdown */
+            .relative {
+                position: relative;
+                z-index: 1;
+            }
+
+            /* Garante que o dropdown fique por cima de outros elementos quando aberto */
+            .relative[x-data] {
+                z-index: 9999;
             }
         </style>
     @endpush
@@ -136,7 +145,7 @@ use Illuminate\Support\Facades\Storage;
             </div>
 
             <!-- Filters -->
-            <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg border border-amber/20 mb-6">
+            <div class="bg-white shadow-sm sm:rounded-lg border border-amber/20 mb-6">
                 <div class="p-4">
                     <form action="{{ route('dashboard') }}" method="GET" class="flex flex-wrap gap-4 items-center" id="filters-form">
                         <!-- Search -->
@@ -158,7 +167,15 @@ use Illuminate\Support\Facades\Storage;
                                     </svg>
                                     Filtros
                                 </button>
-                                <div class="dropdown-content" :class="{ 'show': open }">
+                                <div class="dropdown-content" :class="{ 'show': open }" x-ref="filtersDropdown" x-init="$watch('open', value => {
+                                    if (value) {
+                                        const button = $el.previousElementSibling;
+                                        const rect = button.getBoundingClientRect();
+                                        $el.style.top = rect.bottom + 'px';
+                                        $el.style.left = rect.left + 'px';
+                                        $el.style.width = '16rem';
+                                    }
+                                })">
                                     <div class="p-4 space-y-4">
                                         <!-- Favoritos -->
                                         <div>
@@ -231,7 +248,15 @@ use Illuminate\Support\Facades\Storage;
                                     </svg>
                                     Ordenar
                                 </button>
-                                <div class="dropdown-content" :class="{ 'show': open }">
+                                <div class="dropdown-content" :class="{ 'show': open }" x-ref="sortDropdown" x-init="$watch('open', value => {
+                                    if (value) {
+                                        const button = $el.previousElementSibling;
+                                        const rect = button.getBoundingClientRect();
+                                        $el.style.top = rect.bottom + 'px';
+                                        $el.style.left = rect.left + 'px';
+                                        $el.style.width = '12rem';
+                                    }
+                                })">
                                     <div class="p-4 space-y-2">
                                         <label class="flex items-center gap-2 cursor-pointer">
                                             <input type="radio" name="sort" value="latest" {{ !request('sort') || request('sort') === 'latest' ? 'checked' : '' }} class="border-amber/20 text-teal focus:ring-teal/20">
