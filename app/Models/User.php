@@ -45,4 +45,16 @@ class User extends Authenticatable
             'password' => 'hashed',
         ];
     }
+
+    protected $appends = [
+        'profile_photo_url',
+    ];
+
+    /**
+     * Get the memories for the user.
+     */
+    public function memories()
+    {
+        return $this->hasMany(Memory::class);
+    }
 }

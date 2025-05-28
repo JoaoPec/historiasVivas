@@ -1,3 +1,124 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+/* Adicione estas classes para truncar texto em múltiplas linhas */
+.line-clamp-1 {
+    display: -webkit-box;
+    -webkit-line-clamp: 1;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+.line-clamp-2 {
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+.line-clamp-3 {
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+/* Cores personalizadas do Histórias Vivas */
+:root {
+    --cream: #fff8e7;
+    --amber: #f5a623;
+    --amber-light: #ffdea3;
+    --amber-dark: #d68c00;
+    --teal: #2a7d6b;
+    --teal-light: #3a9d89;
+    --teal-dark: #1a5d4b;
+}
+
+.bg-cream {
+    background-color: var(--cream);
+}
+
+.bg-teal {
+    background-color: var(--teal);
+}
+
+.bg-teal-dark {
+    background-color: var(--teal-dark);
+}
+
+.text-teal {
+    color: var(--teal);
+}
+
+.border-teal {
+    border-color: var(--teal);
+}
+
+.hover\:bg-teal:hover {
+    background-color: var(--teal);
+}
+
+.hover\:bg-teal-dark:hover {
+    background-color: var(--teal-dark);
+}
+
+.hover\:text-teal:hover {
+    color: var(--teal);
+}
+
+.hover\:text-teal-dark:hover {
+    color: var(--teal-dark);
+}
+
+.focus\:border-teal:focus {
+    border-color: var(--teal);
+}
+
+.focus\:ring-teal:focus {
+    --tw-ring-color: var(--teal);
+}
+
+.focus\:ring-teal\/20:focus {
+    --tw-ring-color: rgba(42, 125, 107, 0.2);
+}
+
+.bg-amber {
+    background-color: var(--amber);
+}
+
+.bg-amber-light {
+    background-color: var(--amber-light);
+}
+
+.bg-amber-dark {
+    background-color: var(--amber-dark);
+}
+
+.text-amber {
+    color: var(--amber);
+}
+
+.border-amber {
+    border-color: var(--amber);
+}
+
+.border-amber\/10 {
+    border-color: rgba(245, 166, 35, 0.1);
+}
+
+.border-amber\/20 {
+    border-color: rgba(245, 166, 35, 0.2);
+}
+
+.hover\:bg-amber:hover {
+    background-color: var(--amber);
+}
+
+.hover\:bg-amber-dark:hover {
+    background-color: var(--amber-dark);
+}
+
+.hover\:text-amber:hover {
+    color: var(--amber);
+}

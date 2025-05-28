@@ -69,7 +69,8 @@
                     <div class="mx-auto lg:mr-0 flex items-center justify-center">
                         <div class="relative w-full max-w-[500px] aspect-square rounded-full bg-amber-light/30 p-4">
                             <div class="absolute inset-0 flex items-center justify-center">
-                                <img src="{{ asset('images/logo-historias-vivas.png') }}" alt="Histórias Vivas Logo" class="w-48 h-48">
+                                <img src="{{ asset('images/logo-historias-vivas.png') }}" alt="Histórias Vivas Logo" class="w-60 h-auto">
+
                             </div>
                             <div class="absolute top-10 right-10 bg-white p-3 rounded-xl shadow-lg">
                                 <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-teal" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -98,7 +99,7 @@
         </section>
 
         <!-- Features Section -->
-        <section id="features" class="w-full py-12 md:py-24 lg:py-32">
+        <section id="features" class="w-full bg-white py-12 md:py-24 lg:py-32">
             <div class="container mx-auto px-4 md:px-6">
                 <div class="flex flex-col items-center justify-center space-y-4 text-center">
                     <div class="space-y-2">
@@ -223,7 +224,7 @@
         </section>
 
         <!-- Testimonials Section -->
-        <section id="testimonials" class="w-full py-12 md:py-24 lg:py-32">
+        <section id="testimonials" class="w-full bg-white py-12 md:py-24 lg:py-32">
             <div class="container mx-auto px-4 md:px-6">
                 <div class="flex flex-col items-center justify-center space-y-4 text-center">
                     <div class="space-y-2">
@@ -300,7 +301,7 @@
     </main>
 
     <!-- Footer -->
-    <footer class="w-full border-t border-amber/20 py-6 md:py-0">
+    <footer class="w-full bg-white border-t border-amber/20 py-6 md:py-0">
         <div class="container mx-auto px-4 flex flex-col items-center justify-between gap-4 md:h-24 md:flex-row">
             <div class="flex items-center gap-2">
                 <img src="{{ asset('images/logo-historias-vivas.png') }}" alt="Histórias Vivas Logo" class="h-8 w-6">

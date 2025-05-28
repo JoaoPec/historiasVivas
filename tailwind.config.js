@@ -12,17 +12,13 @@ export default {
     theme: {
         extend: {
             colors: {
-                cream: '#FFF8E7',
-                amber: {
-                    DEFAULT: '#F5A623',
-                    light: '#FFDEA3',
-                    dark: '#D68C00'
+                'teal': '#2A9D8F',
+                'amber': {
+                    DEFAULT: '#E9C46A',
+                    'dark': '#F4A261',
+                    'light': '#EFE6D5',
                 },
-                teal: {
-                    DEFAULT: '#2A7D6B',
-                    light: '#3A9D89',
-                    dark: '#1A5D4B'
-                }
+                'cream': '#FEFAE0',
             },
             fontFamily: {
                 sans: ['Inter', 'sans-serif'],
@@ -30,5 +26,5 @@ export default {
         },
     },
 
-    plugins: [forms],
+    plugins: [require('@tailwindcss/forms')],
 };
