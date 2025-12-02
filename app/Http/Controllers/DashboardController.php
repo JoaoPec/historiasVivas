@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Memory;
+use App\Models\Category;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Carbon\Carbon;
@@ -63,9 +64,9 @@ class DashboardController extends Controller
             }
         }
 
-        // Filter by categories
-        if ($request->has('categories')) {
-            $query->whereIn('category', $request->categories);
+        // Filter by category
+        if ($request->filled('category_id')) {
+            $query->where('category_id', $request->category_id);
         }
 
         // Sort
@@ -103,12 +104,16 @@ class DashboardController extends Controller
             ->whereMonth('created_at', Carbon::now()->month)
             ->count();
 
+        // Get all categories for the filter dropdown
+        $categories = Category::orderBy('name')->get();
+
         return view('dashboard', compact(
             'memories',
             'totalMemories',
             'favoriteMemories',
             'mediaMemories',
-            'monthlyMemories'
+            'monthlyMemories',
+            'categories'
         ));
     }
 } 

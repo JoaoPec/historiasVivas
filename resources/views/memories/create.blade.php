@@ -166,12 +166,12 @@
                                             <div class="flex text-sm text-gray-600">
                                                 <label for="video" class="relative cursor-pointer bg-white rounded-md font-medium text-teal hover:text-teal-dark focus-within:outline-none">
                                                     <span>Carregar vídeo</span>
-                                                    <input id="video" name="video" type="file" class="sr-only" accept="video/*" onchange="validateFileSize(this, 8)">
+                                                    <input id="video" name="video" type="file" class="sr-only" accept="video/*" onchange="validateFileSize(this, 100)">
                                                 </label>
                                                 <p class="pl-1">ou arraste e solte</p>
                                             </div>
                                             <p class="text-xs text-gray-500">
-                                                MP4, MOV, AVI até 8MB
+                                                MP4, MOV, AVI até 100MB
                                             </p>
                                         </div>
                                     </div>

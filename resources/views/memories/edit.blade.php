@@ -40,7 +40,7 @@
                                 <!-- Data -->
                                 <div>
                                     <label for="event_date" class="block text-sm font-medium text-gray-700 mb-1">Data do Acontecimento <span class="text-red-500">*</span></label>
-                                    <input type="date" name="event_date" id="event_date" value="{{ old('event_date', $memory->event_date) }}" required
+                                    <input type="date" name="event_date" id="event_date" value="{{ old('event_date', $memory->event_date?->format('Y-m-d')) }}" required
                                         class="w-full rounded-md border-amber/20 focus:border-teal focus:ring focus:ring-teal/20 transition-colors">
                                     @error('event_date')
                                         <p class="mt-1 text-sm text-red-600">{{ $message }}</p>
@@ -199,12 +199,12 @@
                                             <div class="flex text-sm text-gray-600">
                                                 <label for="video" class="relative cursor-pointer bg-white rounded-md font-medium text-teal hover:text-teal-dark focus-within:outline-none">
                                                     <span>Carregar novo vídeo</span>
-                                                    <input id="video" name="video" type="file" class="sr-only" accept="video/*" onchange="validateFileSize(this, 8)">
+                                                    <input id="video" name="video" type="file" class="sr-only" accept="video/*" onchange="validateFileSize(this, 100)">
                                                 </label>
                                                 <p class="pl-1">ou arraste e solte</p>
                                             </div>
                                             <p class="text-xs text-gray-500">
-                                                MP4, MOV, AVI até 8MB
+                                                MP4, MOV, AVI até 100MB
                                             </p>
                                         </div>
                                     </div>
